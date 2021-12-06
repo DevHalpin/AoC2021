@@ -1,9 +1,10 @@
 const fs = require("fs");
 
+const input = fs.readFileSync("./data1.txt").toString().split("\r\n");
+
 //Part 1
 
-fs.readFile("./data1.txt", function (err, input) {
-  if (err) console.log(err);
+const partOne = (input) => {
   const resultArr = input.toString().split("\n");
   let count = 0;
   for (i = 1; i < resultArr.length; i++) {
@@ -11,13 +12,12 @@ fs.readFile("./data1.txt", function (err, input) {
       count++;
     }
   }
-  console.log(count);
-});
+  console.log("Part One: ",count);
+};
 
 //Part 2
 
-fs.readFile("./data.txt", function (err, input) {
-  if (err) console.log(err);
+const partTwo = () => {
   const resultArr = input.toString().split("\n");
   let count = 0;
   let previousMeasure = 999999999;
@@ -32,5 +32,8 @@ fs.readFile("./data.txt", function (err, input) {
     }
     previousMeasure = threeMeasure;
   }
-  console.log(count);
-});
+  console.log("Part Two: ",count);
+};
+
+partOne(input);
+partTwo(input);
