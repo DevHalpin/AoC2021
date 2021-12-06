@@ -2,7 +2,7 @@ const fs = require("fs");
 
 //Part 1
 
-fs.readFile("./data.txt", function (err, input) {
+fs.readFile("./data1.txt", function (err, input) {
   if (err) console.log(err);
   const resultArr = input.toString().split("\n");
   let count = 0;
